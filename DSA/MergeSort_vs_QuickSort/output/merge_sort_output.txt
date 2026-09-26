@@ -1,0 +1,46 @@
+===== Merge Sort: Social Media IDs =====
+
+Original Array: [324, 125, 456, 218, 102, 389, 275, 147]
+
+---- Merge Steps ----
+
+Step 1:
+  Left Part    : [324]
+  Right Part   : [125]
+  Merged Result: [125, 324]
+
+Step 2:
+  Left Part    : [456]
+  Right Part   : [218]
+  Merged Result: [218, 456]
+
+Step 3:
+  Left Part    : [125, 324]
+  Right Part   : [218, 456]
+  Merged Result: [125, 218, 324, 456]
+
+Step 4:
+  Left Part    : [102]
+  Right Part   : [389]
+  Merged Result: [102, 389]
+
+Step 5:
+  Left Part    : [275]
+  Right Part   : [147]
+  Merged Result: [147, 275]
+
+Step 6:
+  Left Part    : [102, 389]
+  Right Part   : [147, 275]
+  Merged Result: [102, 147, 275, 389]
+
+Step 7:
+  Left Part    : [125, 218, 324, 456]
+  Right Part   : [102, 147, 275, 389]
+  Merged Result: [102, 125, 147, 218, 275, 324, 389, 456]
+
+---- Final Sorted Array ----
+[102, 125, 147, 218, 275, 324, 389, 456]
+
+Total merge operations : 7
+Total comparisons made : 17

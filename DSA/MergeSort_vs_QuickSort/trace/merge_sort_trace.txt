@@ -1,0 +1,37 @@
+MERGE SORT - TRACE TABLE
+=========================
+
+Input Array: 324, 125, 456, 218, 102, 389, 275, 147
+
+This table is generated directly from the execution of merge_sort.c
+(see output/merge_sort_output.txt for the raw program output).
+
+| Step | Left Part          | Right Part         | Merged Result                          |
+|------|---------------------|---------------------|-----------------------------------------|
+| 1    | [324]               | [125]               | [125, 324]                              |
+| 2    | [456]               | [218]               | [218, 456]                              |
+| 3    | [125, 324]          | [218, 456]          | [125, 218, 324, 456]                    |
+| 4    | [102]               | [389]               | [102, 389]                              |
+| 5    | [275]               | [147]               | [147, 275]                              |
+| 6    | [102, 389]          | [147, 275]          | [102, 147, 275, 389]                    |
+| 7    | [125, 218, 324, 456]| [102, 147, 275, 389]| [102, 125, 147, 218, 275, 324, 389, 456]|
+
+How to read this table:
+------------------------
+- Steps 1, 2, 4, and 5 are the smallest merges: two single elements are
+  compared and merged into a sorted pair. This happens because Merge
+  Sort keeps splitting the array in half until only single elements
+  remain (a single element is already "sorted").
+- Steps 3 and 6 merge two sorted pairs into sorted groups of four.
+- Step 7 is the final merge: it combines the two sorted halves
+  [125, 218, 324, 456] and [102, 147, 275, 389] into the complete
+  sorted array.
+
+Total merge operations for 8 elements: 7
+(4 pair-merges + 2 quarter-merges + 1 final merge = 7)
+
+Total element comparisons (from actual program run): 17
+(This is the exact count printed by merge_sort.c, see
+output/merge_sort_output.txt)
+
+Final Sorted Array: 102, 125, 147, 218, 275, 324, 389, 456

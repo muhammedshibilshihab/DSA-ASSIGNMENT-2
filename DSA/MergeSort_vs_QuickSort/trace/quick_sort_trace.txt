@@ -1,0 +1,41 @@
+QUICK SORT - TRACE TABLE
+=========================
+
+Input Array: 324, 125, 456, 218, 102, 389, 275, 147
+Partition Scheme: Lomuto (last element of the current part is the pivot)
+
+This table is generated directly from the execution of quick_sort.c
+(see output/quick_sort_output.txt for the raw program output, including
+every individual comparison).
+
+| Partition | Pivot | Array / Partition Result                                  | Important Comparisons                                   |
+|-----------|-------|-------------------------------------------------------------|-----------------------------------------------------------|
+| 1         | 147   | [125, 102, 147, 218, 324, 389, 275, 456]                     | 324>147, 125<=147, 456>147, 218>147, 102<=147, 389>147, 275>147 |
+| 2         | 102   | [102, 125, 147, 218, 324, 389, 275, 456]                     | 125>102                                                    |
+| 3         | 456   | [102, 125, 147, 218, 324, 389, 275, 456]                     | 218<=456, 324<=456, 389<=456, 275<=456                     |
+| 4         | 275   | [102, 125, 147, 218, 275, 389, 324, 456]                     | 218<=275, 324>275, 389>275                                 |
+| 5         | 324   | [102, 125, 147, 218, 275, 324, 389, 456]                     | 389>324                                                    |
+
+How to read this table:
+------------------------
+- Partition 1 works on the whole array (index 0 to 7). Pivot 147 ends up
+  at index 2, with everything smaller (125, 102) to its left and
+  everything larger (456, 218, 324, 389, 275) to its right.
+- Partition 2 works on the small left part [125, 102]. Pivot 102 ends up
+  at index 0.
+- Partition 3 works on the right part [218, 324, 389, 275, 456]. Pivot
+  456 was already the largest, so it stays at the end (index 7) with no
+  element moved out of place.
+- Partition 4 works on [218, 324, 389, 275]. Pivot 275 ends up at index 4.
+- Partition 5 works on the last remaining unsorted pair [389, 324].
+  Pivot 324 ends up at index 5.
+- Once every part is reduced to zero or one element, the array is fully
+  sorted (Quick Sort sorts "in place" using swaps, not by merging).
+
+Total partition operations for this input: 5
+
+Total element comparisons (from actual program run): 16
+(This is the exact count printed by quick_sort.c, see
+output/quick_sort_output.txt)
+
+Final Sorted Array: 102, 125, 147, 218, 275, 324, 389, 456
